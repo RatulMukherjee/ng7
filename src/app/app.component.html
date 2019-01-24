@@ -1,6 +1,14 @@
 
 <div class="example-container">
-    <input matInput type="text" [(ngModel)]= 'InstaUser' name="InstaUser" id="">
-    <button mat-raised-button color ="primary" (click)='show()' >Click Here</button>
+    <div class="input_text">
+        <input matInput type="text" [(ngModel)]= 'InstaUser' name="InstaUser" id="">
+    </div>
+    <div class="input_text1">
+        <button mat-raised-button color ="primary" (click)='show()' >Click Here</button>
+    </div>
 </div>
+<div class="example-container" *ngIf="books">
+    show this div
+</div>
+
 

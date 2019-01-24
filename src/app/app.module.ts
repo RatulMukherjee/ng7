@@ -4,7 +4,7 @@ import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatInputModule, MatFormField } from '@angular/material';
+import { MatButtonModule, MatInputModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { MatButtonModule, MatInputModule, MatFormField } from '@angular/material
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
-    MatFormField
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
