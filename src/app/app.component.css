@@ -4,8 +4,17 @@
     flex-wrap: nowrap;
   }
  .input_text{
-   flex: 4;
+   flex: 2;
  }
  .input_text1{
-   flex: 3;
+   flex: 2;
+ }
+ .cards{
+  display: flex;
+  padding: 20px;
+  flex-wrap: nowrap;
+ }
+ .card{
+   flex: 1;
+   flex-basis: 33%;
  }

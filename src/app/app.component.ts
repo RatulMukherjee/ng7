@@ -21,10 +21,15 @@ export class AppComponent implements OnInit  {
     //     console.log(response);
     // });
   }
-  show() {
+  // Movie API
+  show1() {
     const allUsers = this.studentService.getUsers(this.InstaUser).subscribe((response: any ) => {
       console.log(response);
       this.books = response;
+    });
+  }
+  show() {
+    const allUsers = this.studentService.getBooks(this.InstaUser).subscribe((response: any ) => {
     });
   }
 

@@ -49,6 +49,9 @@ students: Student[] = [{
   }
 
   getUsers(name) {
-    return this.http.get(this.constants.links + '&t=' + name);
+    return this.http.get(this.constants.linkMovie + '&t=' + name);
+  }
+  getBooks(name) {
+    return this.http.get(this.constants.linkGoodReads + '&q=' + name);
   }
 }
