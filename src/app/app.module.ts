@@ -4,11 +4,15 @@ import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatInputModule, MatFormField } from '@angular/material';
+import { MatButtonModule, MatInputModule, MatFormField, MatToolbarModule,
+  MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { NavComponent } from './nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -17,7 +21,12 @@ import { MatButtonModule, MatInputModule, MatFormField } from '@angular/material
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
-    MatFormField
+    MatFormField,
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
