@@ -1,8 +1,20 @@
 .example-container {
     display: flex;
-    flex-direction: column;
+    padding: 20px;
+    flex-wrap: nowrap;
   }
-  
-  .example-container > * {
-    width: 100%;
-  }
+ .input_text{
+   flex: 2;
+ }
+ .input_text1{
+   flex: 2;
+ }
+ .cards{
+  display: flex;
+  padding: 20px;
+  flex-wrap: nowrap;
+ }
+ .card{
+   flex: 1;
+   flex-basis: 33%;
+ }
