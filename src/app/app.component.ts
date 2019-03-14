@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {  List } from './student.model';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
@@ -8,7 +7,6 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit  {
-  list = List;
   itemName = 'Add an Item';
   done = [];
   todo = [];
@@ -28,5 +26,13 @@ export class AppComponent implements OnInit  {
   }
   addToList() {
      this.todo.push(this.itemName);
+  }
+  removeTask(e) {
+    this.todo.splice(e, 1);
+
+  }
+  sendBack(i) {
+    this.todo.push(this.done[i]);
+    this.done.splice(i, 1);
   }
 }
