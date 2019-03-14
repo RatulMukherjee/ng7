@@ -1,21 +1,24 @@
-
-<div class="example-container">
-    <div class="input_text">
-        <input matInput type="text" [(ngModel)]= 'InstaUser' name="InstaUser" id="">
+<div cdkDropListGroup>
+    <div class="example-container">
+      <h2>To do</h2>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="todo"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+      </div>
     </div>
-    <div class="input_text1">
-        <button mat-raised-button color ="primary" (click)='show()' >Click Here</button>
+    <div class="example-container">
+      <h2>Done</h2>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="done"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+      </div>
     </div>
 </div>
-<div class="cards" *ngIf="books">
-   <div class="card">
-    <mat-card >
-        <img  mat-card-lg-image src="{{books.Poster}}"> 
-        <mat-card-title>{{books.Title}}</mat-card-title>
-        <mat-card-subtitle>Starring: {{books.Actors}}</mat-card-subtitle>
-        <mat-card-content>{{books.Plot}}</mat-card-content>
-    </mat-card>
-   </div>
-</div>
-
-

@@ -1,7 +1,15 @@
-export class Student {
-    id: Number;
-    name: String;
-    en_roll: Number;
-    college: String;
-    university: String;
-}
+export class List {
+     public todo = [
+        'Get to work',
+        'Pick up groceries',
+        'Go home',
+        'Fall asleep'
+      ];
+      public done = [
+        'Get up',
+        'Brush teeth',
+        'Take a shower',
+        'Check e-mail',
+        'Walk dog'
+      ];
+    }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Student } from './student.model';
+import { Student, List } from './student.model';
 import { StudentService } from './student.service';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-root',
@@ -8,29 +9,32 @@ import { StudentService } from './student.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit  {
-  title = 'ng7';
-  InstaUser = '';
-  books = '';
-
-  students: Student[] = [];
-  constructor (private studentService: StudentService ) {}
+  todo = [
+    'Get to work',
+    'Pick up groceries',
+    'Go home',
+    'Fall asleep'
+  ];
+  done = [
+    'Get up',
+    'Brush teeth',
+    'Take a shower',
+    'Check e-mail',
+    'Walk dog'
+  ];
+   constructor (private studentService: StudentService ) {}
 
   ngOnInit() {
-    // const studentsObservable = this.studentService.getStudents();
-    // studentsObservable.subscribe((response: any) => {
-    //     console.log(response);
-    // });
   }
-  // Movie API
-  show1() {
-    const allUsers = this.studentService.getUsers(this.InstaUser).subscribe((response: any ) => {
-      console.log(response);
-      this.books = response;
-    });
-  }
-  show() {
-    const allUsers = this.studentService.getBooks(this.InstaUser).subscribe((response: any ) => {
-    });
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex);
+    }
   }
 
 }
