@@ -1,11 +1,11 @@
 export class List {
-     public todo = [
+     todo = [
         'Get to work',
         'Pick up groceries',
         'Go home',
         'Fall asleep'
       ];
-      public done = [
+     done = [
         'Get up',
         'Brush teeth',
         'Take a shower',
