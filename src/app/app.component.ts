@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {  List } from './student.model';
-import { StudentService } from './student.service';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
@@ -10,7 +9,10 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 export class AppComponent implements OnInit  {
   list = List;
-  constructor (private studentService: StudentService ) {}
+  itemName = 'Add an Item';
+  done = [];
+  todo = [];
+  constructor () {}
 
   ngOnInit() {
   }
@@ -24,5 +26,7 @@ export class AppComponent implements OnInit  {
           event.currentIndex);
     }
   }
-
+  addToList() {
+     this.todo.push(this.itemName);
+  }
 }
